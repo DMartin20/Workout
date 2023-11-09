@@ -10,11 +10,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { LoginComponent } from './login/login.component';
+import { FrontpageComponent } from './frontpage/frontpage.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginComponent,
+    FrontpageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +30,7 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
