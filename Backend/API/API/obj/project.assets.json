@@ -3358,11 +3358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
+      "projectPath": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\API.csproj",
       "packagesPath": "C:\\Users\\dobiv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\",
+      "outputPath": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dobiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
