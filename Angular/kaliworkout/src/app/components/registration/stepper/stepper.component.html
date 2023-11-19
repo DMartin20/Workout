@@ -1,0 +1,16 @@
+<mat-horizontal-stepper [linear]="true" #stepper class="rounded-lg">
+    <mat-step *ngFor="let step of steps" [stepControl]="stepFormGroup(step)">
+      <ng-template matStepLabel>{{ step.title }}</ng-template>
+      <div class="mb-4">
+        <label for="inputField1" class="block text-sm font-medium text-gray-600">Input Field 1:</label>
+        <input type="text" id="inputField1" class="mt-1 p-2 border rounded w-full">
+      </div>
+      <div class="mb-4">
+        <label for="inputField2" class="block text-sm font-medium text-gray-600">Input Field 2:</label>
+        <input type="text" id="inputField2" class="mt-1 p-2 border rounded w-full">
+      </div>
+      <div>
+        <button mat-button matStepperNext>Következő</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
