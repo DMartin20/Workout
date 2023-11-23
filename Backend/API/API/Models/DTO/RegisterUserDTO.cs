@@ -1,12 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace API.Models
+﻿namespace API.Models.DTO
 {
-    public class User
+    public class RegisterUserDTO
     {
-        [Key]
-        public int Id { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -15,12 +10,8 @@ namespace API.Models
 
         public string Password { get; set; }
 
-        public string Token { get; set; }
-
         public string Role { get; set; }
 
         public string Email { get; set; }
-
-
     }
 }

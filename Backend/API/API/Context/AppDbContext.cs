@@ -1,4 +1,4 @@
-﻿using API.Models;
+﻿using API.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Context
