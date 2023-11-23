@@ -1,34 +1,65 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { StepperOrientation } from '@angular/cdk/stepper';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.sass']
 })
-export class StepperComponent {
-  
-  steps = [
-    { number: 1, title: 'Step 1' },
-    { number: 2, title: 'Step 2' },
-    { number: 3, title: 'Step 3' },
-  ];
 
-  formGroups: FormGroup[] = [];
+export class StepperComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) {}
+  stepperOrientation: Observable<StepperOrientation>;
 
-  ngOnInit() {
-    this.steps.forEach(() => {
-      const formGroup = this.fb.group({
-        inputField1: ['', Validators.required],
-        inputField2: ['', Validators.required],
-      });
-      this.formGroups.push(formGroup);
-    });
+  constructor(private fb: FormBuilder,
+    breakpointObserver: BreakpointObserver,
+  ) {
+    this.stepperOrientation = breakpointObserver
+      .observe('(min-width: 800px)')
+      .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
   }
 
-  stepFormGroup(step: any): FormGroup {
-    return this.formGroups[step.number - 1];
+  isLinear = false;
+
+  ngOnInit(): void {
+
   }
+
+  userForm = this.fb.group({
+    name: this.fb.group({
+      firstname: this.fb.control('', Validators.required),
+      lastname: this.fb.control('', Validators.required),
+    }),
+
+    userinfo: this.fb.group({
+      username: this.fb.control('', Validators.required),
+      email: this.fb.control('', Validators.required),
+    }),
+
+    password: this.fb.group({
+      password: this.fb.control('', Validators.required),
+      password2: this.fb.control('', Validators.required),
+    }),
+  });
+
+  get nameFrom() {
+    return this.userForm.get('name') as FormGroup;
+  }
+  get userinfoForm() {
+    return this.userForm.get('userinfo') as FormGroup;
+  }
+  get passwordForm() {
+    return this.userForm.get('password') as FormGroup;
+  }
+
+
+  OnSubmit() {
+    if (this.userForm.valid) {
+    console.log(this.userForm.value);
+  }
+}
+
 }

@@ -1,16 +1,55 @@
-<mat-horizontal-stepper [linear]="true" #stepper class="rounded-lg">
-    <mat-step *ngFor="let step of steps" [stepControl]="stepFormGroup(step)">
-      <ng-template matStepLabel>{{ step.title }}</ng-template>
-      <div class="mb-4">
-        <label for="inputField1" class="block text-sm font-medium text-gray-600">Input Field 1:</label>
-        <input type="text" id="inputField1" class="mt-1 p-2 border rounded w-full">
-      </div>
-      <div class="mb-4">
-        <label for="inputField2" class="block text-sm font-medium text-gray-600">Input Field 2:</label>
-        <input type="text" id="inputField2" class="mt-1 p-2 border rounded w-full">
-      </div>
-      <div>
-        <button mat-button matStepperNext>Következő</button>
+<form [formGroup]="userForm" (ngSubmit)="OnSubmit()">
+  <mat-stepper class="rounded-lg" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
+    <mat-step [stepControl]="userForm">
+      <div formGroupName="name">
+        <ng-template matStepLabel>Személyes adatok</ng-template>
+        <mat-form-field>
+          <mat-label>Vezetéknév</mat-label>
+          <input matInput placeholder="Vezetéknév" formControlName="firstname" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Keresztnév</mat-label>
+          <input matInput placeholder="Keresztnév" formControlName="lastname" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext class="custom-button">Következő</button>
+        </div>
       </div>
     </mat-step>
-  </mat-horizontal-stepper>
+    <mat-step [stepControl]="userinfoForm" label="Felhasználói adatok">
+      <div formGroupName="userinfo">
+        <mat-form-field>
+          <mat-label>Felhasználónév</mat-label>
+          <input matInput formControlName="username" placeholder="Felhasználónév" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Email cím</mat-label>
+          <input matInput formControlName="email" placeholder="Email" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious class="mr-10">Vissza</button>
+          <button mat-button matStepperNext class="custom-button">Következő</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="passwordForm" label="Jelszó">
+      <div formGroupName="password">
+        <mat-form-field>
+          <mat-label>Jelszó</mat-label>
+          <input matInput formControlName="password" placeholder="Jelszó" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Jelszó újra</mat-label>
+          <input matInput formControlName="password2" placeholder="Jelszó újra" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious class="mr-10">Vissza</button>
+          <button mat-raised-button color="warn">Regisztráció</button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</form>
