@@ -1,5 +1,5 @@
 # Calisthenics Workout WebApp
-
+![Egyetemi Logo](https://www.google.com/url?sa=i&url=https%3A%2F%2Funideb.hu%2F&psig=AOvVaw2a-o3k2QpRWexTG2zpd-DE&ust=1701621343816000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCICt48-X8YIDFQAAAAAdAAAAABAE)
 [![Licenc](https://img.shields.io/badge/Licenc-MIT-blue.svg)](LICENC)
 [![Problémák](https://img.shields.io/github/issues/DMartin20/Workout)](https://github.com/DMartin20/Workout/issues)
 [![Csillagok](https://img.shields.io/github/stars/DMartin20/Workout)](https://github.com/DMartin20/Workout/stargazers)
