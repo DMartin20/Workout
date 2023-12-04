@@ -15,13 +15,20 @@ import { FrontpageComponent } from './components/frontpage/frontpage.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { StepperComponent } from './components/registration/stepper/stepper.component';
+import { MatStepperModule } from '@angular/material/stepper';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     LoginComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    RegistrationComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    CdkStepperModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

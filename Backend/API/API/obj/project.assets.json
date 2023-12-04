@@ -3358,11 +3358,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
+      "projectPath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
       "packagesPath": "C:\\Users\\dobiv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dobiv\\Source\\Repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\",
+      "outputPath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dobiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3436,5 +3436,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
