@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "MD9lAa31iP5vlRgqZQo4puWhnaIHPm26apQ1ZiJroadnMKvRHkBomBcsAJgOWAJXzJ2IKWaUmGHT/7t4OK5FpQ==",
+=======
   "dgSpecHash": "49CzL/b3CoXFx3VzsvB5HUFFXxSA1COzpkTf8rGjdbLqrhdubEHLGMoq7Ncgr8+sgzMMRUkBFtXv2BYPEewqBg==",
+>>>>>>> 3e793466e00205fb73f63d58d73ce6f448cd0365
   "success": true,
   "projectFilePath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
   "expectedPackageFiles": [
