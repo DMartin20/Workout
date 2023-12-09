@@ -1,8 +1,12 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "MD9lAa31iP5vlRgqZQo4puWhnaIHPm26apQ1ZiJroadnMKvRHkBomBcsAJgOWAJXzJ2IKWaUmGHT/7t4OK5FpQ==",
+=======
+  "dgSpecHash": "49CzL/b3CoXFx3VzsvB5HUFFXxSA1COzpkTf8rGjdbLqrhdubEHLGMoq7Ncgr8+sgzMMRUkBFtXv2BYPEewqBg==",
+>>>>>>> 3e793466e00205fb73f63d58d73ce6f448cd0365
   "success": true,
-  "projectFilePath": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dobiv\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\dobiv\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -72,5 +76,12 @@
     "C:\\Users\\dobiv\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\dobiv\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
