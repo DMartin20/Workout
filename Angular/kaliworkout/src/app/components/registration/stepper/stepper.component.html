@@ -1,6 +1,6 @@
 <form [formGroup]="userForm" (ngSubmit)="OnSubmit()">
   <mat-stepper class="rounded-lg" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
-    <mat-step [stepControl]="userForm">
+    <mat-step [stepControl]="nameForm">
       <div formGroupName="name">
         <ng-template matStepLabel>Személyes adatok</ng-template>
         <mat-form-field>
@@ -12,9 +12,10 @@
           <mat-label>Keresztnév</mat-label>
           <input matInput placeholder="Keresztnév" formControlName="lastname" required>
         </mat-form-field>
-        <div>
-          <button mat-button matStepperNext class="custom-button">Következő</button>
-        </div>
+
+      </div>
+      <div>
+        <button mat-button matStepperNext class="custom-button">Következő</button>
       </div>
     </mat-step>
     <mat-step [stepControl]="userinfoForm" label="Felhasználói adatok">
@@ -28,10 +29,11 @@
           <mat-label>Email cím</mat-label>
           <input matInput formControlName="email" placeholder="Email" required>
         </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious class="mr-10">Vissza</button>
-          <button mat-button matStepperNext class="custom-button">Következő</button>
-        </div>
+
+      </div>
+      <div>
+        <button mat-button matStepperPrevious class="mr-10">Vissza</button>
+        <button mat-button matStepperNext class="custom-button">Következő</button>
       </div>
     </mat-step>
     <mat-step [stepControl]="passwordForm" label="Jelszó">
@@ -45,10 +47,11 @@
           <mat-label>Jelszó újra</mat-label>
           <input matInput formControlName="password2" placeholder="Jelszó újra" required>
         </mat-form-field>
-        <div>
-          <button mat-button matStepperPrevious class="mr-10">Vissza</button>
-          <button mat-raised-button color="warn">Regisztráció</button>
-        </div>
+
+      </div>
+      <div>
+        <button mat-button matStepperPrevious class="mr-10">Vissza</button>
+        <button mat-raised-button color="warn">Regisztráció</button>
       </div>
     </mat-step>
   </mat-stepper>

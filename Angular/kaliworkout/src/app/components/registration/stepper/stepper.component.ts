@@ -22,7 +22,7 @@ export class StepperComponent implements OnInit {
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
   }
 
-  isLinear = false;
+  isLinear = true;
 
   ngOnInit(): void {
 
@@ -45,7 +45,7 @@ export class StepperComponent implements OnInit {
     }),
   });
 
-  get nameFrom() {
+  get nameForm() {
     return this.userForm.get('name') as FormGroup;
   }
   get userinfoForm() {
