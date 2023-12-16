@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { AuthenticateService } from 'src/app/services/authenticate.service';
+import fromValidators from 'src/app/services/formValidators';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +14,13 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private authencticate: AuthenticateService,
+    private toast: NgToastService,
+    private router: Router
+    ) { }
+
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -21,29 +31,29 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      
+      this.authencticate.loginUser(this.loginForm.value)
+      .subscribe({
+        next:(response)=>{
+          this.loginForm.reset();
+          this.toast.success({detail:"Sikeres Bejelentkezés!", summary:response.message, duration: 5000, position:'topCenter'});
+          this.router.navigate(['/frontpage']);
+        },
+        error:(err)=>{
+          alert(err.error.message)
+        }
+      })
+
     } else {
       console.log("Invalid form");
       
       const passwordControl = this.loginForm.get('password');
       console.log('Password control:', passwordControl);
   
-      this.validateAllFormFields(this.loginForm);
+      fromValidators.validateAllFormFields(this.loginForm);
       alert("Invalid form");
     }
     this.loginForm.markAllAsTouched();
-  }
-
-  private validateAllFormFields(formGroup: FormGroup) {
-
-    Object.keys(formGroup.controls).forEach(field => {
-      const control = formGroup.get(field);
-      if (control instanceof FormGroup) {
-        control.markAsDirty({ onlySelf: true });
-      } else if (control instanceof FormGroup) {
-        this.validateAllFormFields(control);
-      }
-    })
   }
 
 }

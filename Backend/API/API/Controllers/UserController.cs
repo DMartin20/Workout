@@ -1,6 +1,7 @@
 ﻿using API.Models.Domain;
 using API.Models.DTO;
 using API.Repositories.Interface;
+using Azure.Messaging;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -27,7 +28,7 @@ namespace API.Controllers
             var userlogin = new User
             {
                 Email = request.Email,
-                Password = request.Password,
+                Password = request.Password
             };
 
 
@@ -38,15 +39,11 @@ namespace API.Controllers
             }
             else
             {
-                var response = new User
+                
+                return Ok(new
                 {
-                    Email = userlogin.Email,
-                    Password = userlogin.Password,
-                    Token = "vmitoken",
-                };
-
-
-                return Ok(response);
+                    Message = "Login Success!"
+                });
             }
 
         }
@@ -66,17 +63,11 @@ namespace API.Controllers
 
             await _userRepository.RegisterAsync(registerUser);
 
-            var response = new RegisterUserDTO
+            
+            return Ok(new
             {
-                FirstName = registerUser.FirstName,
-                LastName = registerUser.LastName,
-                UserName = registerUser.UserName,
-                Role = registerUser.Role,
-                Email = registerUser.Email,
-                Password = registerUser.Password,
-            };
-
-            return Ok(response);
+                Message = "User Reegistered!"
+            });
         }
 
 

@@ -1,4 +1,4 @@
-<form [formGroup]="userForm" (ngSubmit)="OnSubmit()">
+<form [formGroup]="userForm">
   <mat-stepper class="rounded-lg" [linear]="isLinear" [orientation]="(stepperOrientation | async)!" #stepper>
     <mat-step [stepControl]="nameForm">
       <div formGroupName="name">
@@ -40,18 +40,18 @@
       <div formGroupName="password">
         <mat-form-field>
           <mat-label>Jelszó</mat-label>
-          <input matInput formControlName="password" placeholder="Jelszó" required>
+          <input type="password" matInput formControlName="password" placeholder="Jelszó" required>
         </mat-form-field>
         <br>
         <mat-form-field>
           <mat-label>Jelszó újra</mat-label>
-          <input matInput formControlName="password2" placeholder="Jelszó újra" required>
+          <input type="password" matInput formControlName="password2" placeholder="Jelszó újra" required>
         </mat-form-field>
 
       </div>
       <div>
         <button mat-button matStepperPrevious class="mr-10">Vissza</button>
-        <button mat-raised-button color="warn">Regisztráció</button>
+        <button mat-raised-button color="warn" (click)="OnSubmit()">Regisztráció</button>
       </div>
     </mat-step>
   </mat-stepper>

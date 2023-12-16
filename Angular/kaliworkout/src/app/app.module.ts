@@ -19,7 +19,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/registration/stepper/stepper.component';
 import { MatStepperModule } from '@angular/material/stepper';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup'
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     StepperComponent
   ],
   imports: [
+    NgToastModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,7 +45,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatInputModule,
     ReactiveFormsModule,
     CdkStepperModule,
-    MatStepperModule
+    MatStepperModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,8 @@ import { StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, map } from 'rxjs';
+import { AuthenticateService } from 'src/app/services/authenticate.service';
+import fromValidators from 'src/app/services/formValidators';
 
 @Component({
   selector: 'app-stepper',
@@ -16,6 +18,7 @@ export class StepperComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     breakpointObserver: BreakpointObserver,
+    private authencticate: AuthenticateService
   ) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
@@ -58,8 +61,25 @@ export class StepperComponent implements OnInit {
 
   OnSubmit() {
     if (this.userForm.valid) {
-    console.log(this.userForm.value);
+      console.log(this.userForm.value)
+      this.authencticate.registerUser(this.userForm.value)
+      .subscribe({
+        next:(response)=>{
+          alert(response.message)
+        },
+        error:(err)=>{
+          alert(err.error.message)
+        }
+      })
+
+    } else {
+      console.log("Invalid form");
+
+      fromValidators.validateAllFormFields(this.userForm);
+      alert("Invalid form");
+    }
+
+    this.userForm.markAllAsTouched();
   }
-}
 
 }
