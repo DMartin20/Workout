@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'focim': ['Red Hat Display', 'sans-serif'],
+        'alcim': ['Kaushan Script','cursive'],
+      },
+    },
   },
   plugins: [],
 }

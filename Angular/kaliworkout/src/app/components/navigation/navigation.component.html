@@ -1,36 +1,57 @@
 <header class="w-full bg-transparent fixed z-50 transition-[background] duration-300">
-  <nav class="flex justify-between items-center h-14 max-w-5xl mr-6 ml-6">
+  <nav class="flex justify-between items-center h-14 mr-6 ml-6 lg:w-auto"> <!--NAV_container-->
 
     <a routerLink="" class="flex items-center gap-2 text-white">
       <img src="../assets/pullup.jpg" alt="logo" class="w-6">
       Caliworkout
     </a>
 
+    <ul class="hidden lg:flex flex-row gap-12 mr-16">
+      <li> <!--NAV_item-->
+        <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300">Főoldal</a>
+      </li>
+      <li>
+        <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300">Program</a>
+      </li>
+      <li>
+        <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300">Rólunk</a>
+      </li>
+      <div>
+        <a routerLink="/registration"
+          class="text-black bg-white px-6 py-2 items-center justify-center font-serif text-lg font-bold transition hover:bg-violet-700 duration-200">Regisztráció</a>
+      </div>
+    </ul>
+
     <div
-      class="md:hidden fixed top-0 right-0 bg-[hsl(264,43%,17%)] border-l-2 border-gray-300 transition-transform duration-300 transform translate-x-full h-full w-2/3 bg-opacity-70 backdrop-blur-md"
-      [ngClass]="{'translate-x-0': isSidebarOpen}"
-      [ngClass]="{'translate-x-full': !isSidebarOpen}">
-      <ul class="pt-20 pl-12 flex flex-col gap-10">
-        <li>
-          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300" (click)="toggleSidebar()">Főoldal</a>
+      class="fixed top-0 right-0 bg-[hsl(264,43%,17%)] border-l-2 border-gray-300 transition-transform duration-300 transform translate-x-full h-full w-2/3 bg-opacity-70 backdrop-blur-md lg:w-auto lg:translate-x-full"
+      [ngClass]="{'translate-x-0': isSidebarOpen}" [ngClass]="{'translate-x-full': !isSidebarOpen}"> <!--NAV_menu-->
+      <ul class="pt-20 pl-12 flex flex-col gap-10 
+      lg:flex-row lg:p-0 lg:items-center lg:gap-16"> <!--nav_list-->
+        <li> <!--NAV_item-->
+          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300"
+            (click)="toggleSidebar()">Főoldal</a>
         </li>
         <li>
-          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300" (click)="toggleSidebar()">Program</a>
+          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300"
+            (click)="toggleSidebar()">Program</a>
         </li>
         <li>
-          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300" (click)="toggleSidebar()">Rólunk</a>
+          <a routerLink="" class="text-white font-medium transition hover:text-violet-800 duration-300"
+            (click)="toggleSidebar()">Rólunk</a>
         </li>
         <div>
-          <a routerLink="/registration" class="text-violet-500 font-medium transition hover:text-red-800 duration-300" (click)="toggleSidebar()"> Regisztráció</a>
+          <a routerLink="/registration"
+            class="text-black bg-white px-8 py-4 items-center justify-center font-serif text-lg font-bold transition hover:bg-violet-700 duration-200"
+            (click)="toggleSidebar()"> Regisztráció</a>
         </div>
       </ul>
-      <div class="absolute top-4 right-6 text-2xl cursor-pointer">
+      <div class="absolute top-4 right-6 text-2xl cursor-pointer lg:hidden">
         <img src="../assets/close-line.png" alt="close" (click)="toggleSidebar()">
       </div>
 
     </div>
 
-    <div class="flex cursor-pointer">
+    <div class="flex cursor-pointer lg:hidden">
       <img src="../assets/menu-line.png" alt="menu" (click)="toggleSidebar()">
     </div>
 
