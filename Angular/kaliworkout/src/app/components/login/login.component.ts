@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
+import { Subscription } from 'rxjs';
+import { LoginRequest } from 'src/app/models/userLoginModel';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 import fromValidators from 'src/app/services/formValidators';
 
@@ -10,16 +12,26 @@ import fromValidators from 'src/app/services/formValidators';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm!: FormGroup;
+  model: LoginRequest;
+  private subscribtion?: Subscription;
 
   constructor(
     private fb: FormBuilder,
     private authencticate: AuthenticateService,
     private toast: NgToastService,
     private router: Router
-    ) { }
+  ) {
+    this.model = {
+      email: '',
+      password: ''
+    };
+  }
+  ngOnDestroy(): void {
+    this.subscribtion?.unsubscribe();
+  }
 
 
   ngOnInit(): void {
@@ -31,27 +43,26 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      
-      this.authencticate.loginUser(this.loginForm.value)
-      .subscribe({
-        next:(response)=>{
-          this.loginForm.reset();
-          this.toast.success({detail:"Sikeres Bejelentkezés!", summary:response.message, duration: 5000, position:'topCenter'});
-          this.router.navigate(['/frontpage']);
-        },
-        error:(err)=>{
-          alert(err.error.message)
-        }
-      })
+
+      this.authencticate.loginUser(this.model)
+        .subscribe({
+          next: (response) => {
+            this.loginForm.reset();
+            this.toast.success({ detail: "Sikeres Bejelentkezés!", position: 'topCenter' });
+            this.router.navigate(['/frontpage']);
+          },
+          error: (err) => {
+            this.toast.error({
+              detail: err.error.message
+            });
+          }
+        })
 
     } else {
-      console.log("Invalid form");
-      
-      const passwordControl = this.loginForm.get('password');
-      console.log('Password control:', passwordControl);
-  
       fromValidators.validateAllFormFields(this.loginForm);
-      alert("Invalid form");
+      this.toast.error({
+        detail: 'Invalid form!'
+      });
     }
     this.loginForm.markAllAsTouched();
   }

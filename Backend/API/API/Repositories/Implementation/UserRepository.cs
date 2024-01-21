@@ -16,9 +16,9 @@ namespace API.Repositories.Implementation
 
         public async Task<User> AuthenticateAsync(User user)
         {
-            await _appDbContext.Users.FirstOrDefaultAsync(x => x.Email == user.Email && x.Password == user.Password);
+            var authenticatedUser = await _appDbContext.Users.FirstOrDefaultAsync(x => x.Email == user.Email && x.Password == user.Password);
 
-            return user;
+            return authenticatedUser;
         }
 
         public async Task<User> RegisterAsync(User user)

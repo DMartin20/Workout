@@ -39,11 +39,8 @@ namespace API.Controllers
             }
             else
             {
-                
-                return Ok(new
-                {
-                    Message = "Login Success!"
-                });
+
+                return Ok();
             }
 
         }

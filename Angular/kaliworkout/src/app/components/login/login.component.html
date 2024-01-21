@@ -1,6 +1,6 @@
 <section class="bg-[hsl(264,43%,17%)] min-h-screen flex items-center justify-center">
     <!--login container-->
-    <div class="bg-[#4c495d] flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+    <div class="bg-[#4c495d] flex rounded-2xl shadow-lg max-w-3xl p-5 items-center z-[1]">
 
         <!--form container-->
         <div class="md:w-1/2 px-16">
@@ -11,7 +11,7 @@
 
                 <input formControlName="email"
                     class="p-2 mt-8 rounded-xl border w-full shadow-sm focus:outline-none focus:border-[#802bb1] focus:ring-1 focus:ring-[#802bb1] invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
-                    type="email" name="email" placeholder="Email cim" required="required">
+                    type="email" name="email" placeholder="Email cim" required="required" [(ngModel)]="model.email">
 
                 <span
                     *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)"
@@ -22,7 +22,7 @@
 
                 <input formControlName="password"
                     class="p-2 rounded-xl border w-full shadow-sm focus:outline-none focus:border-[#802bb1] focus:ring-1 focus:ring-[#802bb1] invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
-                    type="password" name="password" placeholder="Jelszó" required="required">
+                    type="password" name="password" placeholder="Jelszó" required="required" [(ngModel)]="model.password">
 
                     <span
                     *ngIf="loginForm.get('password')?.touched && !loginForm.get('password')?.value && loginForm.get('password')?.hasError('required')"
@@ -56,6 +56,19 @@
         </div>
 
 
+    </div>
+
+    <div class="flex">
+        
+        <div
+            class="[clip-path:polygon(100%_0%,0%_100%,100%_100%)] bg-[hsl(264,52%,35%)] h-[350px] w-[305px] absolute right-0 bottom-0 sm:h-[1005px] sm:w-[705px]">
+        </div>
+        <div
+            class="[clip-path:polygon(100%_0%,0%_100%,100%_100%)] bg-[hsl(264,52%,40%)] h-[350px] w-[205px] absolute right-0 bottom-0 sm:h-[1005px] sm:w-[505px]">
+        </div>
+        <div
+            class="[clip-path:polygon(100%_0%,0%_100%,100%_100%)] bg-[hsl(264,52%,45%)] h-[350px] w-[105px] absolute right-0 bottom-0 sm:h-[1005px] sm:w-[305px]">
+        </div>
     </div>
 
 </section>
