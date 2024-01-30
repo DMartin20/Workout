@@ -4,6 +4,7 @@ using API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240129131033_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,15 +52,30 @@ namespace API.Migrations
                     b.Property<int>("DifficultyId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("DifficultyId1")
+                        .HasColumnType("int");
+
                     b.Property<string>("ExerciseName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TypeId1")
+                        .HasColumnType("int");
+
                     b.HasKey("ExerciseId");
 
                     b.HasIndex("DifficultyId");
+
+                    b.HasIndex("DifficultyId1");
+
+                    b.HasIndex("TypeId");
+
+                    b.HasIndex("TypeId1");
 
                     b.ToTable("Exercises");
                 });
@@ -160,30 +178,31 @@ namespace API.Migrations
                     b.ToTable("WorkoutPlans");
                 });
 
-            modelBuilder.Entity("ExerciseType", b =>
-                {
-                    b.Property<int>("ExercisesExerciseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TypesTypeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ExercisesExerciseId", "TypesTypeId");
-
-                    b.HasIndex("TypesTypeId");
-
-                    b.ToTable("ExerciseTypes", (string)null);
-                });
-
             modelBuilder.Entity("API.Models.Domain.Exercise", b =>
                 {
                     b.HasOne("API.Models.Domain.Difficulty", "Difficulty")
-                        .WithMany("Exercises")
+                        .WithMany()
                         .HasForeignKey("DifficultyId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("API.Models.Domain.Difficulty", null)
+                        .WithMany("Exercises")
+                        .HasForeignKey("DifficultyId1");
+
+                    b.HasOne("API.Models.Domain.Type", "Type")
+                        .WithMany()
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("API.Models.Domain.Type", null)
+                        .WithMany("Exercises")
+                        .HasForeignKey("TypeId1");
+
                     b.Navigation("Difficulty");
+
+                    b.Navigation("Type");
                 });
 
             modelBuilder.Entity("API.Models.Domain.WorkoutExercise", b =>
@@ -216,21 +235,6 @@ namespace API.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ExerciseType", b =>
-                {
-                    b.HasOne("API.Models.Domain.Exercise", null)
-                        .WithMany()
-                        .HasForeignKey("ExercisesExerciseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("API.Models.Domain.Type", null)
-                        .WithMany()
-                        .HasForeignKey("TypesTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("API.Models.Domain.Difficulty", b =>
                 {
                     b.Navigation("Exercises");
@@ -239,6 +243,11 @@ namespace API.Migrations
             modelBuilder.Entity("API.Models.Domain.Exercise", b =>
                 {
                     b.Navigation("WorkoutExercises");
+                });
+
+            modelBuilder.Entity("API.Models.Domain.Type", b =>
+                {
+                    b.Navigation("Exercises");
                 });
 
             modelBuilder.Entity("API.Models.Domain.User", b =>

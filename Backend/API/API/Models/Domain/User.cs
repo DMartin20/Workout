@@ -21,6 +21,8 @@ namespace API.Models.Domain
 
         public string Email { get; set; }
 
+        public DateTime Created { get; set; }
 
+        public List<WorkoutPlan> WorkoutPlans { get; set; }
     }
 }
