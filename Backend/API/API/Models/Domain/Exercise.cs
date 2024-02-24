@@ -12,8 +12,6 @@
 
         public Difficulty Difficulty { get; set; }
 
-        public List<Type> Types { get; set; }
-
         public List<WorkoutExercise> WorkoutExercises { get; set; }
 
     }
