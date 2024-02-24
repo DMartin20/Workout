@@ -14,7 +14,7 @@ namespace API.Controllers
 
         public UserController(IUserRepository userRepository)
         {
-            this._userRepository = userRepository;
+            _userRepository = userRepository;
         }
 
         [HttpPost("authenticate")]
@@ -63,7 +63,7 @@ namespace API.Controllers
             
             return Ok(new
             {
-                Message = "User Reegistered!"
+                Message = "User Registered!"
             });
         }
 

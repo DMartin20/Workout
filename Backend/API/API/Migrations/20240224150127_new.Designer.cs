@@ -4,6 +4,7 @@ using API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240224150127_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,10 +88,15 @@ namespace API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TypeId"));
 
+                    b.Property<int?>("ExerciseId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TypeId");
+
+                    b.HasIndex("ExerciseId");
 
                     b.ToTable("Types");
                 });
@@ -205,6 +213,13 @@ namespace API.Migrations
                     b.Navigation("Type");
                 });
 
+            modelBuilder.Entity("API.Models.Domain.Type", b =>
+                {
+                    b.HasOne("API.Models.Domain.Exercise", null)
+                        .WithMany("Types")
+                        .HasForeignKey("ExerciseId");
+                });
+
             modelBuilder.Entity("API.Models.Domain.WorkoutExercise", b =>
                 {
                     b.HasOne("API.Models.Domain.Exercise", "Exercise")
@@ -243,6 +258,8 @@ namespace API.Migrations
             modelBuilder.Entity("API.Models.Domain.Exercise", b =>
                 {
                     b.Navigation("ExerciseTypes");
+
+                    b.Navigation("Types");
 
                     b.Navigation("WorkoutExercises");
                 });

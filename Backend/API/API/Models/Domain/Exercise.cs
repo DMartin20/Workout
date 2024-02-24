@@ -2,9 +2,9 @@
 {
     public class Exercise
     {
-        public int ExerciseId {  get; set; }
+        public int ExerciseId { get; set; }
 
-        public string ExerciseName { get; set;}
+        public string ExerciseName { get; set; }
 
         public int DifficultyId { get; set; }
 
@@ -14,5 +14,6 @@
 
         public List<WorkoutExercise> WorkoutExercises { get; set; }
 
+        public List<ExerciseType> ExerciseTypes { get; set; }
     }
 }

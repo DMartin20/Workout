@@ -9,6 +9,6 @@ namespace API.Models.Domain
 
         public string Name { get; set; }
 
-        public List<Exercise> Exercises { get; set; }
+        public List<ExerciseType> ExerciseTypes { get; set; }
     }
 }

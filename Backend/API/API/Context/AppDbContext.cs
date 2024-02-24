@@ -17,6 +17,7 @@ namespace API.Context
         public DbSet<WorkoutExercise> WorkoutExercises { get; set; }
         public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<Type> Types { get; set; }
+        public DbSet<ExerciseType> ExerciseTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,27 +30,27 @@ namespace API.Context
                 .HasKey(we => new { we.WorkoutId, we.ExerciseId });
 
             modelBuilder.Entity<WorkoutExercise>()
-            .HasOne(we => we.WorkoutPlan)
-            .WithMany(wp => wp.WorkoutExercises)
-            .HasForeignKey(we => we.WorkoutId);
+                .HasOne(we => we.WorkoutPlan)
+                .WithMany(wp => wp.WorkoutExercises)
+                .HasForeignKey(we => we.WorkoutId);
 
             modelBuilder.Entity<WorkoutExercise>()
-            .HasOne(we => we.Exercise)
-            .WithMany(e => e.WorkoutExercises)
-            .HasForeignKey(we => we.ExerciseId);
+                .HasOne(we => we.Exercise)
+                .WithMany(e => e.WorkoutExercises)
+                .HasForeignKey(we => we.ExerciseId);
 
-            modelBuilder.Entity<Exercise>()
-            .HasOne(e => e.Difficulty)
-            .WithMany(d => d.Exercises)
-            .HasForeignKey(e => e.DifficultyId)
-            .OnDelete(DeleteBehavior.Restrict)
-            .HasPrincipalKey(t => t.DifficultyId);
+            modelBuilder.Entity<ExerciseType>()
+                .HasKey(et => new { et.ExerciseId, et.TypeId });
 
-            modelBuilder.Entity<Exercise>()
-            .HasMany(e => e.Types)
-            .WithMany(t => t.Exercises)
-            .UsingEntity(j => j.ToTable("ExerciseTypes"));
+            modelBuilder.Entity<ExerciseType>()
+                .HasOne(et => et.Exercise)
+                .WithMany(e => e.ExerciseTypes)
+                .HasForeignKey(et => et.ExerciseId);
 
+            modelBuilder.Entity<ExerciseType>()
+                .HasOne(et => et.Type)
+                .WithMany(t => t.ExerciseTypes)
+                .HasForeignKey(et => et.TypeId);
         }
     }
 }
