@@ -15,15 +15,10 @@ namespace API.Repositories.Implementation
             _appDbContext = appDbContext;
         }
 
-        public Task<Exercise> Create(Exercise exercise)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IEnumerable<ExerciseDTO>> GetAllExercisesAsync()
+        public async Task<IEnumerable<GetExerciseDTO>> GetAllExercisesAsync()
         {
             return await _appDbContext.Exercises
-                .Select(e => new ExerciseDTO
+                .Select(e => new GetExerciseDTO
                 {
                     ExerciseName = e.ExerciseName,
                     Imagepath = e.ImagePath,
@@ -33,11 +28,11 @@ namespace API.Repositories.Implementation
                 .ToListAsync();
         }
 
-        public async Task<ExerciseDTO> GetExerciseAsync(int exerciseId)
+        public async Task<GetExerciseDTO> GetExerciseAsync(int exerciseId)
         {
             return await _appDbContext.Exercises
                 .Where(e => e.ExerciseId == exerciseId)
-                .Select(e => new ExerciseDTO
+                .Select(e => new GetExerciseDTO
                 {
                     ExerciseName = e.ExerciseName,
                     Imagepath = e.ImagePath,

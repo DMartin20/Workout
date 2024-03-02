@@ -2,7 +2,7 @@
 
 namespace API.Models.DTO
 {
-    public class ExerciseDTO
+    public class GetExerciseDTO
     {
         public string ExerciseName { get; set; }
 
