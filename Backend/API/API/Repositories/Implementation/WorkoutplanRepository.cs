@@ -2,7 +2,6 @@
 using API.Models.Domain;
 using API.Models.DTO;
 using API.Repositories.Interface;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Repositories.Implementation
@@ -16,20 +15,56 @@ namespace API.Repositories.Implementation
             _appDbContext = appDbContext;
         }
 
-        public async Task<WorkoutPlan> CreateWorkoutPlanAsync(WorkoutPlan workoutPlan)
+        public async Task<WorkoutPlan> CreateWorkoutPlanAsync(CreateWorkoutPlanDTO workoutPlanDTO, int userId)
         {
-            await _appDbContext.WorkoutPlans.AddAsync(workoutPlan);
+
+            var workoutplan = new WorkoutPlan
+            {
+                UserId = userId,
+                WorkoutName = workoutPlanDTO.WorkoutName,
+                Reps = workoutPlanDTO.Reps,
+                Rest = workoutPlanDTO.Rest
+            };
+            await _appDbContext.WorkoutPlans.AddAsync(workoutplan);
             await _appDbContext.SaveChangesAsync();
 
-            return workoutPlan;
+            return workoutplan;
         }
 
-        public async Task<bool> DeleteWorkoutPlanAsync(int id)
+        public async Task<bool> DeleteWorkoutPlanAsync(int Id)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                if (await _appDbContext.WorkoutPlans
+                    .FirstOrDefaultAsync(wp => wp.WorkoutId == Id) == null)
+                {
+                    // Ha a workout plan nem található, akkor visszatérünk hamis értékkel
+                    return false;
+                }
+
+                var workoutplan = _appDbContext.WorkoutPlans.FirstOrDefaultAsync(wp => wp.WorkoutId == Id);
+                _appDbContext.WorkoutPlans.Remove(await workoutplan);
+                // Töröljük az eddigi kapcsolatokat a workout és az exercise között
+                var existingWorkoutExercises = await _appDbContext.WorkoutExercises
+                     .Where(we => we.WorkoutId == Id)
+                     .ToListAsync();
+
+                _appDbContext.WorkoutExercises.RemoveRange(existingWorkoutExercises);
+
+
+                await _appDbContext.SaveChangesAsync();
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"An error occurred while Deleting workout plan: {ex.Message}"); ;
+            }
         }
 
-        public async Task<IEnumerable<GetWorkoutPlanDTO>> GetAllWorkoutPlanAsync(int UserId) 
+        public async Task<IEnumerable<GetWorkoutPlanDTO>> GetAllWorkoutPlanAsync(int UserId)
         {
             return await _appDbContext.WorkoutPlans
                 .Where(wp => wp.UserId == UserId)
@@ -42,7 +77,7 @@ namespace API.Repositories.Implementation
                         .Where(we => we.WorkoutId == x.WorkoutId)
                         .Select(we => new GetExerciseDTO
                         {
-                            
+
                             ExerciseName = _appDbContext.Exercises
                                             .Where(e => e.ExerciseId == we.ExerciseId)
                                             .Select(e => e.ExerciseName)
@@ -66,11 +101,41 @@ namespace API.Repositories.Implementation
         .ToListAsync();
         }
 
-        public async Task<WorkoutPlan> GetWorkoutPlanByIdAsync(int id)
+        public async Task<GetWorkoutPlanDTO> GetWorkoutPlanByIdAsync(int id)
         {
             return await _appDbContext.WorkoutPlans
                 .Where(wp => wp.WorkoutId == id)
-                .FirstOrDefaultAsync();
+                .Select(x => new GetWorkoutPlanDTO
+                {
+                    WorkoutName = x.WorkoutName,
+                    Reps = x.Reps,
+                    Rest = x.Rest,
+                    Exercises = _appDbContext.WorkoutExercises
+                        .Where(we => we.WorkoutId == x.WorkoutId)
+                        .Select(we => new GetExerciseDTO
+                        {
+
+                            ExerciseName = _appDbContext.Exercises
+                                            .Where(e => e.ExerciseId == we.ExerciseId)
+                                            .Select(e => e.ExerciseName)
+                                            .FirstOrDefault(),
+                            Imagepath = _appDbContext.Exercises
+                                            .Where(e => e.ExerciseId == we.ExerciseId)
+                                            .Select(e => e.ImagePath)
+                                            .FirstOrDefault(),
+                            DifficultyName = _appDbContext.Exercises
+                                                .Where(e => e.ExerciseId == we.ExerciseId)
+                                                .Select(e => e.Difficulty.DifficultyName)
+                                                .FirstOrDefault(),
+                            TypeNames = _appDbContext.Exercises
+                                            .Where(e => e.ExerciseId == we.ExerciseId)
+                                            .SelectMany(e => e.ExerciseTypes)
+                                            .Select(et => et.Type.Name)
+                                            .ToList()
+                        })
+                        .ToList()
+                }).FirstOrDefaultAsync();
+
         }
 
         public async Task<bool> UpdateWorkoutPlanAsync(int Id, UpdatePlanDTO updatePlanDTO)
