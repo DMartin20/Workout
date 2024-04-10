@@ -3,7 +3,7 @@ import { StepperOrientation } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, map } from 'rxjs';
-import { AuthenticateService } from 'src/app/services/authenticate.service';
+import { AuthenticateService } from 'src/app/services/AuthenticateService';
 import fromValidators from 'src/app/services/formValidators';
 
 @Component({

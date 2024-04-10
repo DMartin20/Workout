@@ -21,6 +21,13 @@ namespace API.Repositories.Implementation
             return authenticatedUser;
         }
 
+        public async Task<User> GetUserData(int userId)
+        {
+            var userdata = await _appDbContext.Users.FirstOrDefaultAsync(x => x.Id == userId);
+
+            return userdata;
+        }
+
         public async Task<User> RegisterAsync(User user)
         {
             await _appDbContext.Users.AddAsync(user);

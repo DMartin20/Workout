@@ -1,5 +1,6 @@
 ﻿using API.Models.DTO;
 using API.Repositories.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -15,6 +16,7 @@ namespace API.Controllers
             _workoutplanRepository = workoutplanRepository;
         }
 
+        [Authorize]
         [HttpDelete("deletePlan/{planId}")]
         public async Task<IActionResult> DeleteWorkoutPlanById(int planId)
         {
@@ -30,6 +32,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("createPlan/{userId}")]
         public async Task<IActionResult> CreateNewPlan([FromBody] CreateWorkoutPlanDTO plan, int userId)
         {
@@ -45,6 +48,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("getUsersPlans/{userId}")]
         public async Task<IActionResult> GetAllUserPlans(int userId)
         {
@@ -60,6 +64,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("getPlanById/{planId}")]
         public async Task<IActionResult> GetPlanById(int planId)
         {
@@ -75,6 +80,7 @@ namespace API.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("updateWorkoutPlan/{workoutplanId}")]
         public async Task<IActionResult> UpdateWithExercises(int workoutplanId, UpdatePlanDTO updatePlanDTO)
         {

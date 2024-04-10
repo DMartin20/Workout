@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { Subscription } from 'rxjs';
 import { LoginRequest } from 'src/app/models/userLoginModel';
-import { AuthenticateService } from 'src/app/services/authenticate.service';
+import { AuthenticateService } from 'src/app/services/AuthenticateService';
 import fromValidators from 'src/app/services/formValidators';
 
 @Component({
@@ -48,8 +48,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         .subscribe({
           next: (response) => {
             this.loginForm.reset();
+            this.authencticate.storeToken(response.token);
             this.toast.success({ detail: "Sikeres Bejelentkezés!", position: 'topCenter' });
-            this.router.navigate(['/frontpage']);
+            this.router.navigate(['/workout-list']);
           },
           error: (err) => {
             this.toast.error({
@@ -66,5 +67,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
     this.loginForm.markAllAsTouched();
   }
+
+  
 
 }

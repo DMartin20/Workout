@@ -1,0 +1,41 @@
+<section class="relative py-12 px-4 min-h-screen bg-gray-100">
+  <div class="container mx-auto">
+      <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="px-6 py-8">
+              <h2 class="text-3xl font-bold mb-4 text-gray-800">Felhasználói Profil</h2>
+              <ng-container *ngIf="user$ | async as user">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Keresztnév:</p>
+                          <p class="text-lg text-gray-900">{{ user.firstName }}</p>
+                      </div>
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Vezetéknév</p>
+                          <p class="text-lg text-gray-900">{{ user.lastName }}</p>
+                      </div>
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Felhasználónév:</p>
+                          <p class="text-lg text-gray-900">{{ user.userName }}</p>
+                      </div>
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Email-cím:</p>
+                          <p class="text-lg text-gray-900">{{ user.email }}</p>
+                      </div>
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Fiók:</p>
+                          <p class="text-lg text-gray-900">{{ user.role }}</p>
+                      </div>
+                      <div>
+                          <p class="text-lg text-gray-700 font-semibold">Regisztrált:</p>
+                          <p class="text-lg text-gray-900">{{ user.created | date }}</p>
+                      </div>
+                      <!-- Add more user information fields as needed -->
+                  </div>
+              </ng-container>
+              <div *ngIf="!(user$ | async)">
+                  <p class="text-lg text-gray-700">Loading user profile...</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

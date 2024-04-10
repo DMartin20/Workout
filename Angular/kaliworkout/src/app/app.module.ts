@@ -20,7 +20,11 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/registration/stepper/stepper.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgToastModule } from 'ng-angular-popup'
+import { NgToastModule } from 'ng-angular-popup';
+import { WorkoutListComponent } from './components/workout-list/workout-list.component';
+import { AddWorkoutComponent } from './components/add-workout/add-workout.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { NgToastModule } from 'ng-angular-popup'
     LoginComponent,
     FrontpageComponent,
     RegistrationComponent,
-    StepperComponent
+    StepperComponent,
+    WorkoutListComponent,
+    AddWorkoutComponent,
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     NgToastModule,
