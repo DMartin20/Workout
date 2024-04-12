@@ -1,4 +1,4 @@
-<header class="w-full bg-transparent fixed z-50 transition-[background] duration-300" [ngClass]="{'bg-violet-700': isListRoute || isProfileRoute}">
+<header class="w-full bg-transparent fixed z-50 transition-[background] duration-300" [ngClass]="{'bg-violet-700': isListRoute || isProfileRoute || isAddRoute || isEditRoute}">
   <nav class="flex justify-between items-center h-14 mr-6 ml-6 lg:w-auto"> <!--NAV_container-->
 
     <a routerLink="" class="flex items-center gap-2 text-white">
@@ -21,9 +21,9 @@
       </li>
       <div>
         <a *ngIf="!isLoggedIn" routerLink="/registration"
-          class="text-white m-4 bg-transparent px-6 py-2 items-center justify-center font-serif text-lg font-bold transition hover:bg-violet-700 duration-200">Regisztráció</a>
+          class="text-white m-4 bg-transparent px-6 py-2 items-center justify-center font-serif text-lg rounded-md font-bold transition hover:bg-violet-700 duration-200">Regisztráció</a>
           <a *ngIf="!isLoggedIn" routerLink="/login"
-          class="text-white bg-transparent px-6 py-2 items-center justify-center font-serif text-lg font-bold transition hover:bg-violet-700 duration-200">Bejelentkezés</a>
+          class="text-white bg-transparent px-6 py-2 items-center justify-center font-serif text-lg font-bold rounded-md transition hover:bg-violet-700 duration-200">Bejelentkezés</a>
           <a *ngIf="isLoggedIn" routerLink="/profile"
           class="text-black bg-white m-4 px-6 py-2 items-center justify-center font-serif text-lg font-bold transition hover:bg-violet-700 duration-200">Hello, {{username}}!</a>
           <a *ngIf="isLoggedIn"

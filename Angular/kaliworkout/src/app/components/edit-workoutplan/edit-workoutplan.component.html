@@ -1,0 +1,78 @@
+<section class="relative py-12 px-4 min-h-screen bg-gray-100">
+    <div class="container mx-auto">
+        <div class="flex mt-20">
+            <!-- Baloldali sáv - edzésterv betöltése -->
+            <div class="w-1/2 border-r bg-violet-300 rounded-lg p-4 mb-4">
+                <!-- Betöltött edzésterv tartalma -->
+                <div class="flex justify-between mb-2">
+                    <h3 class="text-lg text-center font-semibold">{{ loadedWorkout?.workoutName }}</h3>
+                    <div>
+                        <p><strong>Ismétlések:</strong> {{ loadedWorkout?.reps }}</p>
+                        <p><strong>Pihenő:</strong> {{ loadedWorkout?.rest }}</p>
+                    </div>
+                </div>
+                <div
+                    cdkDropList
+                    #planlist="cdkDropList"
+                    [cdkDropListData]="exercisesInPlan"
+                    [cdkDropListConnectedTo]="[availablelist]"
+                    (cdkDropListDropped)="drop($event)"
+                    class="bg-violet-300 rounded-lg p-4 mb-4" >
+                    <div class="bg-white rounded-lg shadow-md mb-4 p-4 transition duration-300 transform hover:shadow-lg hover:scale-105 hover:bg-gray-300" *ngFor="let exercise of exercisesInPlan">
+                        <img [src]="exercise.imagepath" alt="Exercise Image" class="w-24 h-24 rounded mb-2">
+                        <p class="font-semibold">{{ exercise.exerciseName }}</p>
+                        <!-- Nehézség -->
+                        <div class="inline-block bg-gray-300 rounded-md px-2 py-1 text-sm font-semibold mt-2">{{
+                            exercise.difficultyName }}</div>
+                        <!-- Izomcsoportok -->
+                        <div class="flex flex-wrap mt-2">
+                            <p class="text-sm font-semibold"></p>
+                            <div *ngFor="let muscleGroup of exercise.typeNames"
+                                class="bg-gray-300 text-gray-800 rounded-md px-2 py-1 text-sm mr-2 mb-2">{{
+                                muscleGroup }}</div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="text-lg font-semibold">Mennyiség: {{ 1 }}</p>
+                        </div>
+                    </div>
+                    <!-- Mennyiség -->
+
+                </div>
+                <div>
+                    <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" (click)="saveButton()">Mentés</button>
+                </div>
+            </div>
+
+            <!-- Jobboldali sáv - gyakorlatok listája -->
+            <div
+                class="w-1/2 p-4 bg-white border-l border-gray-300 transform transition-transform duration-700 ease-in-out">
+                <h2 class="text-lg font-semibold mb-4">Available Exercises</h2>
+                <!-- Gyakorlatok lista -->
+                <div cdkDropList
+                    #availablelist="cdkDropList"
+                    [cdkDropListData]="availableExercises"
+                    [cdkDropListConnectedTo]="[planlist]"
+                    (cdkDropListDropped)="drop($event)"
+                    class="grid grid-cols-2 gap-4">
+                    <div *ngFor="let exercise of availableExercises" cdkDrag>
+                        <!-- Gyakorlat kártya -->
+                        <div class="bg-violet-300 rounded-lg shadow-md p-4 transition duration-300 transform hover:shadow-lg hover:scale-105 hover:bg-gray-300 hover:animate-spin">
+                            <img [src]="exercise.imagepath" alt="Exercise Image" class="w-24 h-24 rounded mb-2">
+                            <p class="font-semibold">{{ exercise.exerciseName }}</p>
+                            <!-- Nehézség -->
+                            <div class="inline-block bg-gray-300 rounded-md px-2 py-1 text-sm font-semibold mt-2">{{
+                                exercise.difficultyName }}</div>
+                            <!-- Izomcsoportok -->
+                            <div class="flex flex-wrap mt-2">
+                                <p class="text-sm font-semibold"></p>
+                                <div *ngFor="let muscleGroup of exercise.typeNames"
+                                    class="bg-gray-300 text-gray-800 rounded-md px-2 py-1 text-sm mr-2 mb-2">{{
+                                    muscleGroup }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

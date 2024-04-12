@@ -3353,19 +3353,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dobiv\\.nuget\\packages\\": {}
+    "C:\\Users\\Martin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\dobiv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dobiv\\source\\repos\\DMartin20\\Workout\\Backend\\API\\API\\obj\\",
+      "projectPath": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dobiv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3385,6 +3385,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3433,7 +3438,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

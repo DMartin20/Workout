@@ -1,10 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\",
+  "WorkspaceRootPath": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\dobiv\\documents\\github\\workout\\backend\\api\\api\\repositories\\implementation\\workoutplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Migrations\\20240412155726_pluszi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:API\\Migrations\\20240412155726_pluszi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\models\\domain\\workoutexercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\models\\domain\\workoutexercise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\controllers\\workoutplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\controllers\\workoutplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\repositories\\implementation\\workoutplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\repositories\\implementation\\workoutplanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\controllers\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\controllers\\exercisecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\models\\dto\\updateplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\models\\dto\\updateplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\models\\dto\\getworkoutplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\models\\dto\\getworkoutplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\models\\dto\\getexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\models\\dto\\getexercisedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|c:\\users\\martin\\documents\\github\\workout\\backend\\api\\api\\repositories\\implementation\\exerciserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42895D07-E261-4F19-84E8-7112EC989B5E}|API\\API.csproj|solutionrelative:api\\repositories\\implementation\\exerciserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,12 +63,141 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "20240412155726_pluszi.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Migrations\\20240412155726_pluszi.cs",
+              "RelativeDocumentMoniker": "API\\Migrations\\20240412155726_pluszi.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Migrations\\20240412155726_pluszi.cs",
+              "RelativeToolTip": "API\\Migrations\\20240412155726_pluszi.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T15:57:26.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WorkoutExercise.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\Domain\\WorkoutExercise.cs",
+              "RelativeDocumentMoniker": "API\\Models\\Domain\\WorkoutExercise.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\Domain\\WorkoutExercise.cs",
+              "RelativeToolTip": "API\\Models\\Domain\\WorkoutExercise.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T15:55:46.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "API\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "API\\Context\\AppDbContext.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAiwBwAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-12T15:54:28.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdatePlanDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\UpdatePlanDTO.cs",
+              "RelativeDocumentMoniker": "API\\Models\\DTO\\UpdatePlanDTO.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\UpdatePlanDTO.cs",
+              "RelativeToolTip": "API\\Models\\DTO\\UpdatePlanDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T15:57:16.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetWorkoutPlanDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\GetWorkoutPlanDTO.cs",
+              "RelativeDocumentMoniker": "API\\Models\\DTO\\GetWorkoutPlanDTO.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\GetWorkoutPlanDTO.cs",
+              "RelativeToolTip": "API\\Models\\DTO\\GetWorkoutPlanDTO.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T11:59:55.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\UserController.cs",
+              "RelativeToolTip": "API\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAGgAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:34:07.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ExerciseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\ExerciseRepository.cs",
+              "RelativeDocumentMoniker": "API\\Repositories\\Implementation\\ExerciseRepository.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\ExerciseRepository.cs",
+              "RelativeToolTip": "API\\Repositories\\Implementation\\ExerciseRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACUAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:33:20.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetExerciseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\GetExerciseDTO.cs",
+              "RelativeDocumentMoniker": "API\\Models\\DTO\\GetExerciseDTO.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Models\\DTO\\GetExerciseDTO.cs",
+              "RelativeToolTip": "API\\Models\\DTO\\GetExerciseDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:32:38.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExerciseController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\ExerciseController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\ExerciseController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\ExerciseController.cs",
+              "RelativeToolTip": "API\\Controllers\\ExerciseController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T10:30:50.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkoutplanController.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\WorkoutplanController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\WorkoutplanController.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Controllers\\WorkoutplanController.cs",
+              "RelativeToolTip": "API\\Controllers\\WorkoutplanController.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAF4AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:14:21.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "WorkoutplanRepository.cs",
-              "DocumentMoniker": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
               "RelativeDocumentMoniker": "API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
-              "ToolTip": "C:\\Users\\dobiv\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
+              "ToolTip": "C:\\Users\\Martin\\Documents\\GitHub\\Workout\\Backend\\API\\API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
               "RelativeToolTip": "API\\Repositories\\Implementation\\WorkoutplanRepository.cs",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAB0AAAAJAAAA",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAALIAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-24T16:22:58.132Z",
               "EditorCaption": ""

@@ -14,5 +14,7 @@ namespace API.Models.Domain
         public WorkoutPlan WorkoutPlan { get; set; }
 
         public Exercise Exercise { get; set; }
+
+        public int Id { get;  set; }
     }
 }

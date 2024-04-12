@@ -4,6 +4,8 @@ namespace API.Models.DTO
 {
     public class GetWorkoutPlanDTO
     {
+        public int WorkoutId { get; set; }
+
         public string WorkoutName { get; set; }
 
         public int Rest {  get; set; }

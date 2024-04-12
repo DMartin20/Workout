@@ -55,7 +55,7 @@ namespace API.Controllers
             }
 
         }
-        [Authorize]
+        
         [HttpGet("getUserData/{userId}")]
         public async Task<IActionResult> GetUserData(int userId)
         {

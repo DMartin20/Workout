@@ -1,11 +1,30 @@
 <section class="relative pt-10 pb-0 px-0 min-h-screen bg-white">
-    <div class="lg:w-auto lg:flex md:grid mr-6 ml-6 pt-10 gap-6">
-    <h1 class="text-2xl font-bold mb-4">Edzésterveim</h1>
-    
-    <ul class="mb-4">
-      <li *ngFor="let item of items" class="border border-gray-300 p-2 mb-2">{{ item }}</li>
-    </ul>
-    
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="addItem()">Hozzáadás</button>
+  <div class="lg:w-auto lg:flex md:grid mr-6 ml-6 pt-10 gap-6">
+    <h2 class="text-2xl font-bold mb-4">Edzéstervek</h2>
+  <table class="min-w-full bg-white">
+    <thead>
+      <tr>
+        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold uppercase tracking-wider">Név</th>
+        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold uppercase tracking-wider">Sorozatok száma</th>
+        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold uppercase tracking-wider">Pihenő idő</th>
+        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold uppercase tracking-wider">Gyakorlatok száma</th>
+        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-xs font-semibold uppercase tracking-wider">Műveletek</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let workout of workoutList" class="border-b border-gray-200">
+        <td class="px-6 py-4 whitespace-nowrap">{{ workout.workoutName }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ workout.reps }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ workout.rest }} perc</td>
+        <td class="px-6 py-4 whitespace-nowrap">{{ workout.exercises.length }}</td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <button (click)="editWorkout(workout.workoutId)" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Megnyitás</button>
+          <button class="px-4 py-2 m-4 bg-red-500 text-white rounded-md hover:bg-red-800">Törlés</button>
+        </td>
+      </tr>
+    </tbody>
+    <button routerLink="/add-workout" class="px-4 py-2 m-4 bg-violet-500 text-white rounded-md hover:bg-violet-800">Új hozzáadása</button>
+  </table>
+  
   </div>
 </section>

@@ -27,8 +27,9 @@ namespace API.Context
                 .HasForeignKey(wp => wp.UserId);
 
             modelBuilder.Entity<WorkoutExercise>()
-                .HasKey(we => new { we.WorkoutId, we.ExerciseId });
+            .HasKey(we => we.Id); // Vegyük fel egyedi kulcsként az "Id" mezőt
 
+            // Módosítsuk a kulcsokhoz tartozó kardinalitást
             modelBuilder.Entity<WorkoutExercise>()
                 .HasOne(we => we.WorkoutPlan)
                 .WithMany(wp => wp.WorkoutExercises)

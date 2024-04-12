@@ -10,7 +10,9 @@ import { RouteService } from 'src/app/services/routeservice.service';
 export class NavigationComponent {
   isSidebarOpen = false;
   isListRoute: boolean = false;
+  isAddRoute: boolean = false;
   isProfileRoute: boolean = false;
+  isEditRoute: boolean = false;
   isLoggedIn: boolean = false;
   username: string | undefined;
   toggleSidebar() {
@@ -27,7 +29,9 @@ export class NavigationComponent {
 
     this.routeService.currentRoute$.subscribe(route => {
       this.isListRoute = route === '/workout-list';
-      this.isProfileRoute = route === '/profile'; // Change '/list' to the actual route of your list component
+      this.isProfileRoute = route === '/profile';
+      this.isAddRoute = route === '/add-workout';
+      this.isEditRoute = route.startsWith('/workout-edit'); // Change '/list' to the actual route of your list component
     });
 
     this.authService.authStatus$.subscribe(status => {

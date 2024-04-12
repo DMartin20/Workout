@@ -20,6 +20,7 @@ namespace API.Repositories.Implementation
             return await _appDbContext.Exercises
                 .Select(e => new GetExerciseDTO
                 {
+                    Id = e.ExerciseId,
                     ExerciseName = e.ExerciseName,
                     Imagepath = e.ImagePath,
                     DifficultyName = e.Difficulty.DifficultyName,
@@ -34,6 +35,7 @@ namespace API.Repositories.Implementation
                 .Where(e => e.ExerciseId == exerciseId)
                 .Select(e => new GetExerciseDTO
                 {
+                    Id = e.ExerciseId,
                     ExerciseName = e.ExerciseName,
                     Imagepath = e.ImagePath,
                     DifficultyName = e.Difficulty.DifficultyName,

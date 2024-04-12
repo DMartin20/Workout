@@ -4,6 +4,8 @@ namespace API.Models.DTO
 {
     public class GetExerciseDTO
     {
+        public int Id { get; set; }
+
         public string ExerciseName { get; set; }
 
         public string DifficultyName { get; set; }

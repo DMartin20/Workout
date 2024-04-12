@@ -70,6 +70,7 @@ namespace API.Repositories.Implementation
                 .Where(wp => wp.UserId == UserId)
         .Select(x => new GetWorkoutPlanDTO
         {
+            WorkoutId = x.WorkoutId,
             WorkoutName = x.WorkoutName,
             Reps = x.Reps,
             Rest = x.Rest,
@@ -77,6 +78,10 @@ namespace API.Repositories.Implementation
                         .Where(we => we.WorkoutId == x.WorkoutId)
                         .Select(we => new GetExerciseDTO
                         {
+                            Id = _appDbContext.Exercises
+                                            .Where(e => e.ExerciseId == we.ExerciseId)
+                                            .Select(e => e.ExerciseId)
+                                            .FirstOrDefault(),
 
                             ExerciseName = _appDbContext.Exercises
                                             .Where(e => e.ExerciseId == we.ExerciseId)
@@ -107,6 +112,7 @@ namespace API.Repositories.Implementation
                 .Where(wp => wp.WorkoutId == id)
                 .Select(x => new GetWorkoutPlanDTO
                 {
+                    WorkoutId = x.WorkoutId,
                     WorkoutName = x.WorkoutName,
                     Reps = x.Reps,
                     Rest = x.Rest,
@@ -114,6 +120,10 @@ namespace API.Repositories.Implementation
                         .Where(we => we.WorkoutId == x.WorkoutId)
                         .Select(we => new GetExerciseDTO
                         {
+                            Id = _appDbContext.Exercises
+                                            .Where(e => e.ExerciseId == we.ExerciseId)
+                                            .Select(e => e.ExerciseId)
+                                            .FirstOrDefault(),
 
                             ExerciseName = _appDbContext.Exercises
                                             .Where(e => e.ExerciseId == we.ExerciseId)
@@ -166,6 +176,7 @@ namespace API.Repositories.Implementation
                         .ToListAsync();
 
                     _appDbContext.WorkoutExercises.RemoveRange(existingWorkoutExercises);
+                    
 
                     // Majd hozzáadjuk az új gyakorlatokat
                     for (int i = 0; i < updatePlanDTO.ExerciseIds.Count; i++)

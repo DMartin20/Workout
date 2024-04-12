@@ -14,7 +14,7 @@ namespace API.Controllers
         {
             _exerciseRepository = exerciseRepository;
         }
-        [Authorize]
+        
         [HttpGet("GetExercise")]
         public async Task<IActionResult> GetExerciseById(int exersizeId)
         {
@@ -29,7 +29,7 @@ namespace API.Controllers
                 return StatusCode(500, $"Inernal Server Error: {ex.Message}!");
             }
         }
-        [Authorize]
+        
         [HttpGet("GetAllExercise")]
         public async Task<IActionResult> GetAllExercise()
         {

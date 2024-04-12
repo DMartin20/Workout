@@ -36,6 +36,7 @@ export class AuthenticateService {
           this.username = response.userName;
           this.setUsername(this.username);
           this.userid = response.id;
+          this.setUserId(this.userid);
         }
 
       })
@@ -49,6 +50,15 @@ export class AuthenticateService {
   getUsername(): string | undefined {
     const username = localStorage.getItem('username')
     return username !== null ? username : undefined
+  }
+
+  setUserId(userId: number) {
+    localStorage.setItem('userId', userId.toString()); // Convert to string before storing
+  }
+
+  getUserId(): number | undefined {
+    const userId = localStorage.getItem('userId');
+    return userId ? parseInt(userId, 10) : undefined; // Convert back to number after retrieving
   }
 
   getUserProfile(): Observable<any> {

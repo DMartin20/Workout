@@ -14,7 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FrontpageComponent } from './components/frontpage/frontpage.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { StepperComponent } from './components/registration/stepper/stepper.component';
@@ -24,7 +24,9 @@ import { NgToastModule } from 'ng-angular-popup';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 import { AddWorkoutComponent } from './components/add-workout/add-workout.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { EditWorkoutplanComponent } from './components/edit-workoutplan/edit-workoutplan.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,12 @@ import { FooterComponent } from './components/footer/footer.component'
     WorkoutListComponent,
     AddWorkoutComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    EditWorkoutplanComponent
   ],
   imports: [
+    DragDropModule,
+    FormsModule,
     NgToastModule,
     BrowserModule,
     AppRoutingModule,

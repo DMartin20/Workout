@@ -6,6 +6,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth.guard';
+import { AddWorkoutComponent } from './components/add-workout/add-workout.component';
+import { EditWorkoutplanComponent } from './components/edit-workoutplan/edit-workoutplan.component';
 
 const routes: Routes = [
   {
@@ -21,7 +23,13 @@ const routes: Routes = [
     path: 'workout-list', component: WorkoutListComponent, canActivate: [AuthGuard]
   },
   {
+    path: 'workout-edit/:id', component: EditWorkoutplanComponent, canActivate: [AuthGuard]
+  },
+  {
     path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]
+  },
+  {
+    path: 'add-workout', component: AddWorkoutComponent, canActivate: [AuthGuard]
   },
   {
     path: '', redirectTo: '/frontpage', pathMatch: 'full'
