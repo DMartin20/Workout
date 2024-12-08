@@ -49,4 +49,4 @@ Ez a projekt a MIT Licenc alatt áll - részletekért lásd a [LICENC](LICENC) f
 
 Nyugodtan lépj kapcsolatba bármilyen visszajelzéssel vagy problémával!
 
-Boldog Kaliszténia Edzést! 💪🏋️‍♂️
+Boldog Edzést! 💪🏋️‍♂️
